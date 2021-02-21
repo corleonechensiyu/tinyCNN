@@ -1,5 +1,7 @@
 # tinyCNN
 
+[知呼介绍](https://zhuanlan.zhihu.com/p/351309697)
+
 ## 简介
 tinyCNN是将MNN简易实现的前向推理框架，只有CPU实现，后续将加上arm，OPENCL实现
 
