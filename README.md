@@ -3,7 +3,8 @@
 [知乎介绍](https://zhuanlan.zhihu.com/p/351309697)
 
 ## 简介
-tinyCNN是将MNN简易实现的前向推理框架，只有CPU实现，后续将加上arm，OPENCL实现
+tinyCNN是将MNN简易实现的前向推理框架，此项目为了更加了解和学习推理框架的运行
+暂时只有CPU实现，后续将加上arm，OPENCL实现
 
 ## TODO list
 * [ ] TEST Mat数据结构
