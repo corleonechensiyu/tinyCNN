@@ -1,0 +1,74 @@
+namespace TCNN;
+enum PadMode : byte{
+    CAFFE=0,
+    VALID=1,
+    SAME=2
+}
+
+table Convolution2DCommon {
+    padX:int = 0;
+    padY:int = 0;
+    kernelX:int = 1;
+    kernelY:int = 1;
+    strideX:int = 1;
+    strideY:int = 1;
+    dilateX:int = 1;
+    dilateY:int = 1;
+    padMode:PadMode = CAFFE;
+    group:int = 1;
+    outputCount:int = 0;
+    inputCount:int = 0;
+    relu:bool=false;
+    relu6:bool=false;
+    pads:[int];
+}
+
+table Convolution2D {
+    common:Convolution2DCommon;
+    weight:[float];
+    bias:[float];
+}
+
+table InnerProduct {
+    outputCount:int;
+    biasTerm:int;
+    weightSize:int;
+    weight:[float];
+    bias:[float];
+    axis:int;
+}
+
+enum PoolType : byte {
+    MAXPOOL=0,
+    AVEPOOL
+}
+enum PoolPadType : byte {
+    CAFFE=0,
+    VALID,
+    SAME
+}
+table Pooling {
+    padX:int;
+    padY:int;
+    isGlobal:bool=false;
+    kernelX:int;
+    kernelY:int;
+    strideX:int;
+    strideY:int;
+    type:PoolType;
+    padType:PoolPadType;
+    ceilModel:bool=true;
+    pads:[int];
+}
+table Softmax {
+    axis:int;
+}
+
+table ReLU {
+    slope:float;
+}
+
+table Input {
+    dims:[int];
+}
+

@@ -1,0 +1,47 @@
+
+include "CaffeOp.fbs";
+namespace TCNN;
+attribute "priority";
+
+enum OpType : int {
+    Convolution,
+    InnerProduct,
+    Input,
+    Pooling,
+    ReLU,
+    Softmax,
+}
+
+union OpParameter {
+    Convolution2D,
+    InnerProduct,
+	Pooling,
+    Input,
+    ReLU,
+	Softmax,
+}
+// Op TODO FIX ME 
+table Op {
+    inputIndexes: [int];
+    main: OpParameter;
+    name: string;
+    outputIndexes: [int];    
+    type: OpType;
+	bottom_size: int;
+	top_size: int;
+	bottom_blobs : string;
+	top_blobs : string;
+}
+
+//TODO  FIX ME 
+table Net {
+    bizCode: string;
+    oplists: [Op];
+    outputName: [string];
+    tensorName: [string];
+	tensorNumber: int = 0;
+	layer_count: int;
+	blob_count : int;
+}
+
+root_type Net;

@@ -1,0 +1,3 @@
+/home/csy/JJL/tinyCNN/build/CMakeFiles/rebuild_cache.dir
+/home/csy/JJL/tinyCNN/build/CMakeFiles/edit_cache.dir
+/home/csy/JJL/tinyCNN/build/CMakeFiles/testBackend.dir
